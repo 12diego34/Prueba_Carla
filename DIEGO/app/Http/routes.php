@@ -40,10 +40,10 @@ Route::post('register', 'Auth\AuthController@postRegister');
 
 //listado de plantillas
 Route::get('listar_plantillas','ModeloController@mismodelos');
-
+Route::get('plantillas/{id}','ModeloController@armarplantilla');
 Route::post('crear','ModeloController@crear');
 
-Route::get('listar_cartas','CartaController@cartas');
 
+Route::get('listar_cartas','CartaController@cartas');
 Route::get('descargar_pdf/{nombre}','PdfController@descargar');
-Route::post('guardar_pdd','PdfController@guardar');
+Route::post('guardar_pdf','PdfController@guardar');

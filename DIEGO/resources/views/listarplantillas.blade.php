@@ -22,6 +22,7 @@
                             <th style="text-align:center;" width="25%"> Fecha</th>
                             <th style="text-align:center;" width="10%"> Nombre </th>       
                             <th> Descripcion </th>    
+                            <th> Opciones </th>    
                         </tr>
                     </thead>
                     @foreach ($modelos as $modelo)
@@ -31,6 +32,14 @@
                         echo "<td>".$modelo->created_at."</td>";
                         echo "<td>".$modelo->nombre."</td>";
                         echo "<td>".$modelo->descripcion."</td>";
+                        echo '<td> 
+                        <a href="plantillas/'.$modelo->id.'"class="btn btn-sm btn-warning">
+                        <span class="glyphicon glyphicon-pencil"></span></a>
+                        <a type="button" id='.$modelo->id.' class="btn btn-sm btn-warning">
+                        <span class="glyphicon glyphicon-envelope"></span></a>
+                        <a type="button" id='.$modelo->id.' class="btn btn-sm btn-warning">
+                        <span class="glyphicon glyphicon-trash"></span></a>
+                        </td>';
                         echo "</tr>";
                     ?>
                     @endforeach
