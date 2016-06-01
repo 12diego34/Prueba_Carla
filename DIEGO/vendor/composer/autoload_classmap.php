@@ -564,6 +564,7 @@ return array(
     'Illuminate\\Auth\\DatabaseUserProvider' => $vendorDir . '/laravel/framework/src/Illuminate/Auth/DatabaseUserProvider.php',
     'Illuminate\\Auth\\EloquentUserProvider' => $vendorDir . '/laravel/framework/src/Illuminate/Auth/EloquentUserProvider.php',
     'Illuminate\\Auth\\Events\\Attempting' => $vendorDir . '/laravel/framework/src/Illuminate/Auth/Events/Attempting.php',
+    'Illuminate\\Auth\\Events\\Failed' => $vendorDir . '/laravel/framework/src/Illuminate/Auth/Events/Failed.php',
     'Illuminate\\Auth\\Events\\Lockout' => $vendorDir . '/laravel/framework/src/Illuminate/Auth/Events/Lockout.php',
     'Illuminate\\Auth\\Events\\Login' => $vendorDir . '/laravel/framework/src/Illuminate/Auth/Events/Login.php',
     'Illuminate\\Auth\\Events\\Logout' => $vendorDir . '/laravel/framework/src/Illuminate/Auth/Events/Logout.php',

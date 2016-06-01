@@ -21,12 +21,14 @@
                             <th style="text-align:center;" width="4%"> ID </th>       
                             <th style="text-align:center;" width="25%"> Fecha</th>
                             <th style="text-align:center;" width="10%"> Nombre </th>       
+                            <th style="text-align:center;" width="10%"> Opciones </th>       
                         </tr>
                     </thead>
-<td>@foreach ($cartas as $carta)
+                        <td>@foreach ($cartas as $carta)
                                 {{ $carta->nombre }} {{$carta->usuario}}
                             </td>
-                            <td class="hidden-xs">{{  $carta->id  }}</td>                    <td class="pull-right">
+                            <td class="hidden-xs">{{  $carta->id  }}</td>                    
+                            <td class="pull-right">
                                 <a class="btn btn-primary btn-sm " href="{{ URL::to('carta/' . $carta->id . '/public' ) }}" title="Ver la carta"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
                                 <a class="btn btn-sm btn-primary" href="{{ URL::to('carta/' . $carta->id . '/get_public_pdf') }}" id="btn-pdf" title="Descargar pdf"><span class="glyphicon glyphicon-save"></span></a>
                             </td>

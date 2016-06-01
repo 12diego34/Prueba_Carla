@@ -49,5 +49,4 @@
     </div>
     <script src="{{ URL::asset('static/js/jquery-2.2.3.min.js') }}"></script>
     <script src="{{ URL::asset('static/js/bootstrap.min.js') }}"></script>
-    <script src="{{ URL::asset('static/js/mismodelos.js') }}"></script>
 @endsection

@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="es">
    <head>
+        @section('encabezado')
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <title> TP 2 </title>
         <link rel="stylesheet" href="{{ URL::asset('static/css/fonts.css') }}" media="screen" charset="utf-8">
@@ -10,9 +11,12 @@
         <script src="{{ URL::asset('static/js/jquery-1.12.3.min.js') }}"></script>
         <script src="{{ URL::asset('static/js/bootstrap.min.js')}}"></script>
         <script src="{{ URL::asset('static/js/jquery-2.2.3.min.js') }}"></script>
+         @show
     </head>
     <body>
+        @section('navigation')
         <section class="container-fluid">
+
             <nav class="navbar navbar-inverse navbar-fixed-top">
                 <div class="container-fluid">
                     <div class="navbar-header">    
@@ -73,5 +77,14 @@
                 </div>
             </div>
         </section>
+            @show
+@yield('contenido')
+
+@section('script')
+     <!--- Scripts -->    
+    <script src="{{ URL::asset('static/js/jquery-2.2.3.min.js') }}"></script>
+    <script src="{{ URL::asset('static/js/bootstrap.min.js') }}"></script>
+@show
+     
     </body>
-</html
+</html>
