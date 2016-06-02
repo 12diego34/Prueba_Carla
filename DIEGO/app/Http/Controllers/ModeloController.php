@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\ModeloUsuario as Modelo;
 use App\ModeloCompartido;
-
+use Illuminate\Support\Facades\Redirect;
+use Session;
 use DB;
 
 class ModeloController extends Controller
@@ -50,5 +51,15 @@ class ModeloController extends Controller
         $modelo = Modelo::find($id);
         $contenido = $modelo->contenido;
         return view('customview',["contenido"=>$contenido]);
+    }
+
+    
+    public function eliminar($id)
+    {
+        $modelo = Modelo::find($id);
+        $modelo->delete();       
+     
+        Session::flash('message', 'Plantilla eliminada con éxito!');
+        return Redirect::to('listar_plantillas'); 
     }
 }

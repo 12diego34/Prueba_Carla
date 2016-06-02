@@ -33,11 +33,11 @@
                         echo "<td>".$modelo->nombre."</td>";
                         echo "<td>".$modelo->descripcion."</td>";
                         echo '<td> 
-                        <a href="plantillas/'.$modelo->id.'"class="btn btn-sm btn-warning">
+                        <a href="plantillas/'.$modelo->id.'" class="btn btn-sm btn-warning">
                         <span class="glyphicon glyphicon-pencil"></span></a>
                         <a type="button" id='.$modelo->id.' class="btn btn-sm btn-warning">
                         <span class="glyphicon glyphicon-envelope"></span></a>
-                        <a type="button" id='.$modelo->id.' class="btn btn-sm btn-warning">
+                        <a href="plantillas/'.$modelo->id.'" class="btn btn-sm btn-warning">
                         <span class="glyphicon glyphicon-trash"></span></a>
                         </td>';
                         echo "</tr>";

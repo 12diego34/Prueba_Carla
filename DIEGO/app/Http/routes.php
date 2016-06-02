@@ -40,7 +40,12 @@ Route::post('register', 'Auth\AuthController@postRegister');
 
 //listado de plantillas
 Route::get('listar_plantillas','ModeloController@mismodelos');
+
 Route::get('plantillas/{id}','ModeloController@armarplantilla');
+
+Route::get('plantillas/{id}','ModeloController@eliminar');
+
+
 Route::post('crear','ModeloController@crear');
 
 
