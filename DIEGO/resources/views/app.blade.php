@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html lang="es">
    <head>
-        @section('encabezado')
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <title> TP 2 </title>
         <link rel="stylesheet" href="{{ URL::asset('static/css/fonts.css') }}" media="screen" charset="utf-8">
@@ -11,7 +10,7 @@
         <script src="{{ URL::asset('static/js/jquery-1.12.3.min.js') }}"></script>
         <script src="{{ URL::asset('static/js/bootstrap.min.js')}}"></script>
         <script src="{{ URL::asset('static/js/jquery-2.2.3.min.js') }}"></script>
-         @show
+        
     </head>
     <body>
         @section('navigation')
@@ -63,7 +62,6 @@
                     <div class="collapse" id="demo2">
                         <a href="{{ URL::to('#') }}" class="list-group-item" data-parent="#SubMenu2">Crear <i class="fa fa-caret-down"></i></a>
                         <a href="{{ URL::to('listar_cartas') }}" class="list-group-item" data-parent="#SubMenu2">Listar <i class="fa fa-caret-down"></i></a>
-                        <a href="{{ URL::to('#') }}" class="list-group-item" data-parent="#SubMenu2">Publicas <i class="fa fa-caret-down"></i></a>                  
                     </div>
                 </ul>          
             </div>
@@ -77,9 +75,6 @@
                 </div>
             </div>
         </section>
-            @show
-@yield('contenido')
-
 @section('script')
      <!--- Scripts -->    
     <script src="{{ URL::asset('static/js/jquery-2.2.3.min.js') }}"></script>

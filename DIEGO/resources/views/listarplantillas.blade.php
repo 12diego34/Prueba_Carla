@@ -9,7 +9,6 @@
     <script src="{{ URL::asset('static/js/jquery-2.2.3.min.js') }}"></script>
     <script src="{{ URL::asset('static/js/bootstrap.min.js')}}"></script>
 </head>
-    
 @section('vista')
     <div class="container2">
         <div class="cabecera">
@@ -37,7 +36,7 @@
                         <span class="glyphicon glyphicon-pencil"></span></a>
                         <a type="button" id='.$modelo->id.' class="btn btn-sm btn-warning">
                         <span class="glyphicon glyphicon-envelope"></span></a>
-                        <a href="plantillas/'.$modelo->id.'" class="btn btn-sm btn-warning">
+                        <a href="plantillas/'.$modelo->id.'/borrar" class="btn btn-sm btn-warning">
                         <span class="glyphicon glyphicon-trash"></span></a>
                         </td>';
                         echo "</tr>";

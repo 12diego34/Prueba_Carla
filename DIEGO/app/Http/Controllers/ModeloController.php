@@ -53,7 +53,6 @@ class ModeloController extends Controller
         return view('customview',["contenido"=>$contenido]);
     }
 
-    
     public function eliminar($id)
     {
         $modelo = Modelo::find($id);

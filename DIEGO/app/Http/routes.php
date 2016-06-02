@@ -43,7 +43,7 @@ Route::get('listar_plantillas','ModeloController@mismodelos');
 
 Route::get('plantillas/{id}','ModeloController@armarplantilla');
 
-Route::get('plantillas/{id}','ModeloController@eliminar');
+Route::get('plantillas/{id}/borrar','ModeloController@eliminar');
 
 
 Route::post('crear','ModeloController@crear');

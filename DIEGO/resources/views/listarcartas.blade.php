@@ -9,7 +9,6 @@
     <script src="{{ URL::asset('static/js/jquery-2.2.3.min.js') }}"></script>
     <script src="{{ URL::asset('static/js/bootstrap.min.js')}}"></script>
 </head>
-    
 @section('vista')
     <div class="container2">
         <div class="cabecera">
@@ -31,8 +30,7 @@
                             <td class="pull-right">
                                 <a class="btn btn-primary btn-sm " href="{{ URL::to('carta/' . $carta->id . '/public' ) }}" title="Ver la carta"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
                                 <a class="btn btn-sm btn-primary" href="{{ URL::to('carta/' . $carta->id . '/get_public_pdf') }}" id="btn-pdf" title="Descargar pdf"><span class="glyphicon glyphicon-save"></span></a>
-                            </td>
-                        
+                            </td>                        
                     @endforeach
                 </table>
             </div>
@@ -84,6 +82,3 @@
     <script src="{{ URL::asset('static/js/bootstrap.min.js') }}"></script>
     <script src="{{ URL::asset('static/js/cartas.js') }}"></script>
 @endsection
-
-
-       

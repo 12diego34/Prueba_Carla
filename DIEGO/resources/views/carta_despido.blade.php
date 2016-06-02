@@ -1,4 +1,4 @@
-@extends('layaoutCarta')
+@extends('editarplantilla')
 @section('contenidoCarta')
 
     <div class="row" id="carta">

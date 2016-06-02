@@ -7,50 +7,54 @@
     <link rel="stylesheet" href="{{ URL::asset('static/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('static/css/styles.css') }}">
     <script src="{{ URL::asset('static/js/jquery-2.2.3.min.js') }}"></script>
-    <script src="{{ URL::asset('static/js/bootstrap.min.js')}}"></script>
-    <script src="{{ URL::asset('static/js/jquery-2.2.3.min.js') }}"></script>
+    <script src="{{ URL::asset('static/js/bootstrap.min.js')}}"></script>    
     <script src="{{ URL::asset('static/js/bootstrap.min.js') }}"></script>
     <script src="{{ URL::asset('static/js/guardar_plantilla.js') }}"></script>
 </head>
-@section('encabezado')
+@section('vista')
 <meta name="csrf-token" content="{{ csrf_token() }}">
     @parent
     <style type="text/css">
-
         #editable {
-          background: red;
+          background-color: red;
           border-radius: 2px;
-          /*box-shadow: 0 1px 5px rgba(0,0,0,0.15) inset;*/
           outline: none;
           border: 2px solid transparent;
 
         }
-
         #editable:focus{
             background-color: #FFF;
             border-color: #69c773;
         }
-
-        #carta{
-            border-radius: 25px;
-            border: 5px solid #0B0B61;
+        #contenido{
+            display: block;
+            width: 100%;
+            
+            padding: 10px 15px;
+            font-size: 15px;
+            line-height: 1.42857143;
+            color: #2c3e50;
+            background-color: #ffffff;
+            
+            border: 1px solid #dce4ec;
+            border-radius: 4px;
+          -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+          -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+          -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+          transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+            border-radius: 2px;
+            
             padding: 20px;
-            box-shadow: 10px 10px 10px #888888;
+            
         }
     </style>
-@endsection
-@section('script')
-  @parent
-  <script src="{{ URL::asset('static/js/procesamiento_carta.js') }}"></script>
-@endsection
-@section('navigation')
-    @parent
-@endsection
-<div class="lateral">
+
+    <div class="lateral">
     <div class="list-group panel">  
        <ul class="nav navbar-nav">
         <br>
-        <a onClick="alert('No guarda')" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu" id="save">Guardar</a> 
+        <a onClick="alert('Plantilla guardada')" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu" id="save">Guardar</a> 
       </ul>       
     </div>
   </div>
@@ -67,7 +71,6 @@
                @yield('contenidoCarta')
             </div>
         <form> 
-    </div>
-    
-    
+    </div> 
 </div>
+@endsection

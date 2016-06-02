@@ -1,14 +1,11 @@
 @extends('app')
 @section('content')
-
 <div class="col-lg-10 col-lg-offset-1">
     <div class="list-wrapper">
         <div class="col-lg-12 col-xs-12">
             @yield('dynamic-content')
         </div>
-    </div>
-
-    
+    </div>   
     <footer>
         <div class="row">
             <div class="col-lg-12 text-center">
