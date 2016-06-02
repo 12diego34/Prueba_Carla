@@ -8,11 +8,18 @@
     <link rel="stylesheet" href="{{ URL::asset('static/css/styles.css') }}">
     <script src="{{ URL::asset('static/js/jquery-2.2.3.min.js') }}"></script>
     <script src="{{ URL::asset('static/js/bootstrap.min.js')}}"></script>
+        <script src="{{ URL::asset('static/js/buscar.js')}}"></script>
+
 </head>
 @section('vista')
     <div class="container2">
-        <div class="cabecera">
-            <h2><p style="color:orange;"> Plantillas</p></h2>
+        <div class="cabecera">           
+            <h2><p style="color:orange;"> Plantillas</p></h2>       
+              <div class ="buscadormenu">
+                <form id="searchform">
+                    <input type="text" id="search-term-input" class="form-control search-input" placeholder="Buscar pelicula" name="search">
+                    <span id ="search-term-button" class="glyphicon glyphicon-search"></span>
+                </form>
             <div class="cabecera2">
                 <table  class="table table-striped table-bordered table-condensed">
                    <thead>

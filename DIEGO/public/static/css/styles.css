@@ -4,6 +4,41 @@ body{
     background-color: #fff;
     
 }
+/* Buscador */
+#search-term-input {
+    background: white;
+    padding: 5px 5px 6px 6px;
+    width: 30%;
+    border: 2px solid #E8E8E8;
+    color: #555;font-style:italic;font-size:14px;border-right: none; 
+    float: left;
+    -moz-border-radius-topleft: 5px;font-family: Tahoma, Geneva, sans-serif;
+    -moz-border-radius-topright: 0px;
+    -moz-border-radius-bottomright: 0px;
+    -moz-border-radius-bottomleft: 3px;
+    -webkit-border-radius: 3px 0px 0px 3px;
+    border-radius: 3px 0px 0px 3px;}
+
+#search-term-button {
+    background:white; 
+    width: 3%;
+    height: 4%;
+    line-height: 250%;
+    float: left;
+    cursor: pointer;
+    border: 2px solid #E8E8E8;
+    border-left: none;
+    -moz-border-radius-topleft: 0px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 0px;
+    -webkit-border-radius: 0px 5px 5px 0px;
+    border-radius: 0px 5px 5px 0px;}
+
+.buscadormenu {
+background-color:transparent;
+width: 90%;}
+/* Buscador */
 
 .navbar-inverse .navbar-link {
     color: black;
