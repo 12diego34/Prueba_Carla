@@ -34,6 +34,7 @@ function SaveController($scope, $http) {
     $scope.guardar =function(id){
         $scope.pos = id;
         $http.post('/l/new/' + $scope.pos).success(function(data) {
+            alert('Libro guardado exitosamente');
             $scope.libros = data;
         }, function(){
                 console.log('error');
