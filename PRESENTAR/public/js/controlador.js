@@ -16,15 +16,18 @@ function MostrarLibrosController($scope, $http, $routeParams) {
         });
 
     $scope.delete = function(id) {
-        $http.delete('/l/delete/' + id)
-            .success(function(data) {
-                $scope.libros = data;
-                console.log(data);
-            })
-            .error(function(data) {
-                console.log('Error:' + data);
-            });
-    };
+        if (confirm('Estas seguro que queres borrar ?')) {
+            $('#contactsGrid tr[data-id="' + id + '"]').hide('slow');
+                $http.delete('/l/delete/' + id)
+                    .success(function(data) {
+                        $scope.libros = data;
+                        console.log(data);
+                    })
+                    .error(function(data) {
+                        console.log('Error:' + data);
+                    });
+            };
+        };
 }
 
 function SaveController($scope, $http) {
