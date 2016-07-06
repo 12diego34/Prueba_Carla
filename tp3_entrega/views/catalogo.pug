@@ -1,0 +1,51 @@
+extends base
+block catalogo
+
+  head 
+    title Catalogo
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css')
+  body(ng-controller="MostrarLibrosController")
+  .container-fluid
+      div(data-alerts="alerts")
+        img(src='../img/logo.png', alt='')
+        .linea
+      .container      
+        .form-group.text-center
+            br
+            h3
+              |" {{ libros.length }} libros "
+              
+            input(id='search_term', name='search_term', type='text', 
+                              placeholder='Busque por titulo o precio', ng-model="form.search_term", class="form-control custom-input", valor="form.search_term", required="")
+            h3
+            div(ng-if="libros && libros.length > 0" ng-cloak)
+                table.table-responsive
+                    thead.cabecera-tabla
+                        tr: th Libro
+                            th Título
+                            th Precio
+                            th Valoracion
+                            th Puntaje Bien
+                            th Puntaje Mal
+                            th Eliminar
+                    tbody
+                        tr(ng-repeat="libro in libros")
+                            td(ng-if="!libro.gbook.thumbnail && libro.gbook.imageLinks"): img(ng-src="libro.gbook.imageLinks.thumbnail", class="tapa-libro")
+                            td(ng-if="!libro.gbook.thumbnail && !libro.gbook.imageLinks"): img(ng-src='https://s-media-cache-ak0.pinimg.com/236x/19/c8/9c/19c89cc89aa94417f322670a746d316a.jpg', class="tapa-libro")
+                            td(ng-if="libro.gbook.thumbnail"): img(ng-src="{{libro.gbook.thumbnail}}", class="tapa-libro")
+                            td.item-info-xs 
+                              p {{libro.titulo}}
+                              p(ng-if="!libro.titulo").
+                                No hay información disponible
+                            td.item-info-xs
+                              p {{libro.precio}}
+                              p(ng-if="!libro.precio").
+                                No hay información disponible
+                            td(class="hidden-xs puntaje-large", style="vertical-align: middle")
+                              include puntaje.pug   
+                            td.item-info-xs
+                              p {{libro.ranking_up}}  
+                            td.item-info-xs
+                              p {{libro.ranking_down}}   
+                            td.item-info-xs
+                              button.btn.glyphicon.glyphicon-remove(type='button',ng-click="delete(libro._id)")
