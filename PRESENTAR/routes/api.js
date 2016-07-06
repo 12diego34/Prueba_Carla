@@ -27,18 +27,12 @@ router.get('/l/all', function(req, res, next) {
 });
 
 /* un libro especifico. */
-router.get('/l/:id', function(req, res, next) {
-    Libro.findOne({id: req.params.id}, function(error, libro) {
-        res.json(libro);
-    });
-});
-
-
 router.get('/l/:isbn', function(req, res, next) {
     Libro.findOne({isbn: req.params.isbn}, function(error, libro) {
         res.json({resultados: libro});
     });
 });
+
 
 router.get('/l/:titulo', function(req, res, next) {
     var titulo = req.params.titulo;
@@ -51,7 +45,7 @@ router.get('/l/:titulo', function(req, res, next) {
 
 router.post('/l/new/:id', function(req, res, next) {
     books.lookup(req.params.id, function(error, result) {
-        var libro = new Libro({id:req.params.id, isbn: result.industryIdentifiers[1].identifier && result.industryIdentifiers[0].identifier && 10000 ,titulo: result.title ,precio: 100, ranking_up: 0, ranking_down:0, gbook: result }).save();
+        var libro = new Libro({id:req.params.id, isbn: result.industryIdentifiers[1].identifier, titulo: result.title ,precio: 100, ranking_up: 0, ranking_down:0, gbook: result }).save();
         res.json(libro);
     });
 });
@@ -86,7 +80,7 @@ router.get('/show/:id', function(req, res, next){
 //GOOGLE SEARCH
 router.get('/search/:title', function(req, res, next) {
     var termino = req.params.title;
-    var options = {'limit': 20, field: 'title', type: 'books', order: 'relevance'};
+    var options = {'limit': 20, 'offset':10, field: 'title', type: 'books', order: 'relevance'};
     books.search(termino, options, function(error, results) {
         res.json({resultados: results});
     });

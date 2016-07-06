@@ -13,7 +13,7 @@ block catalogo
         .form-group.text-center
             br
             h3
-              |" {{ libros.length }} libros "
+              |" {{ libros.length }} libros catalogados"
             div(ng-controller="SearchLocalBookController")  
               form(id="search-form", ng-submit="sendForm()")
                 br              
@@ -21,13 +21,13 @@ block catalogo
             h3  
             div(ng-if="libros && libros.length > 0" ng-cloak)
                 table.table-responsive
-                    thead.cabecera-tabla
-                        tr: th ISBN
-                            th Libro
-                            th Título
-                            th Precio
-                            th valoracion
-                            th Eliminar
+                    thead.cabecera-tabla.text-center
+                        tr: th.text-center ISBN
+                            th.text-center Libro
+                            th.text-center Título
+                            th.text-center Precio
+                            th.text-center Valoración
+                            th.text-center Eliminar
                     tbody
                         tr(ng-repeat="libro in libros")
                             td.item-info-xs 

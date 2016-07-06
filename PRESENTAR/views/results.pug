@@ -1,10 +1,11 @@
 div(class="listado")
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css')
     div(class="col-xs-12 col-lg-8 col-lg-offset-2", ng-controller="ShowBookController")
         div(ng-if="resultados && resultados.length > 0" ng-cloak)
             br
             h3
-              |" {{ resultados.length }} resultados encontrados "
-            
+              //|" {{ resultados.length }} resultados encontrados "
+                resultado
             table.table-responsive
                 thead.cabecera-tabla
                     tr: th Libro
@@ -12,7 +13,7 @@ div(class="listado")
                         th Autor
                         th Editorial
                         th Páginas
-                        th
+                        th Guardar
                 tbody
                     tr(ng-repeat="resultado in resultados")
                         td(ng-if="resultado.thumbnail"): img(ng-src="{{resultado.thumbnail}}", class="tapa-libro")
