@@ -1,11 +1,10 @@
 div(class="listado")
-    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css')
     div(class="col-xs-12 col-lg-8 col-lg-offset-2", ng-controller="ShowBookController")
         div(ng-if="resultados && resultados.length > 0" ng-cloak)
             br
             h3
-              //|" {{ resultados.length }} resultados encontrados "
-                resultado
+              |" {{ resultados.length }} resultados encontrados "
+            
             table.table-responsive
                 thead.cabecera-tabla
                     tr: th Libro
