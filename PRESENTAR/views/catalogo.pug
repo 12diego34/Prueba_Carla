@@ -26,8 +26,6 @@ block catalogo
                             th Título
                             th Precio
                             th Valoracion
-                            th Puntaje Bien
-                            th Puntaje Mal
                             th Eliminar
                     tbody
                         tr(ng-repeat="libro in libros")
@@ -48,9 +46,5 @@ block catalogo
                                 No disponible
                             td(class="hidden-xs puntaje-large", style="vertical-align: middle")
                               include puntaje.pug   
-                            td.item-info-xs
-                              p {{libro.ranking_up}}  
-                            td.item-info-xs
-                              p {{libro.ranking_down}}   
                             td.item-info-xs
                               button.btn.glyphicon.glyphicon-remove(type='button',ng-click="delete(libro._id)")

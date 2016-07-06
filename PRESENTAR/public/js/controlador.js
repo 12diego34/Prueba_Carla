@@ -40,7 +40,8 @@ function SaveController($scope, $http) {
                 console.log('error');
         });
     };
-}    
+} 
+
 function RankingController($scope, $http) {
     $scope.rate = function (type, id) {
         if(type === 'positive'){
